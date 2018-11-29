@@ -114,4 +114,22 @@ affect_conflicts<- factor(affect_conflicts,levels = c("never","once" ,"more than
 plot(affect_conflicts,ylim=c(0,50))
 box ()
 
+str(interviews)
+#POSIXct= date 
+
+library(lubridate)
+
+dates<-interviews$interview_date
+head(dates)
+
+
+
+interviews$day <-day(dates)
+interviews$month<-month(dates)
+interviews$year<-year(dates)
+
+str(interviews)
+
+
+
 
