@@ -16,6 +16,12 @@ interviews_god
 
 interviews_god <-select(filter(interviews, village =="God"), no_membrs, years_liv)
 
-interviws_god<-interviews%>% filter(village=="God")%>% 
+interviews_god<-interviews%>% filter(village=="God")%>% 
   select(no_membrs, years_liv)                 
-                 
+
+#Pipes exercise 
+
+interviews %>% filter(memb_assoc =="yes") %>% select(affect_conflicts, liv_count, no_meals)
+
+#mutate
+interviews<- interviews %>% mutate(people_per_room = no_membrs/rooms)
