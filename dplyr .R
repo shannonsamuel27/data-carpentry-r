@@ -46,4 +46,9 @@ interviews %>% group_by(village) %>%
             min_membrs=min(no_membrs), 
             max_membrs = max (no_membrs)
             , n=n())
-                                              
+
+
+#reshaping 
+
+View(interviews %>% mutate(wall_type_logical = TRUE) %>%
+  spread(key = respondent_wall_type, value = wall_type_logical )
